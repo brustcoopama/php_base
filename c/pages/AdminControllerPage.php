@@ -54,7 +54,7 @@ class AdminControllerPage extends ControllerPage
     // Valores default de $paramsView. Valores vazios são ignorados.
     //https://www.infowester.com/metatags.php
     $this->paramsView = array(
-      'title'             => 'Dashboard',                                         // Título da página exibido na aba/janela navegador.
+      'title'             => 'Administração',                                         // Título da página exibido na aba/janela navegador.
       'author'            => 'Mateus Brust',                                      // Autor do desenvolvimento da página ou responsável.
       'description'       => 'Administração',                                     // Resumo do conteúdo do site apresentado nas prévias das buscas em até 90 carecteres.
       'keywords'          => 'modelo, página, controllers, views',                // palavras minúsculas separadas por "," referente ao conteúdo da página em até 150 caracteres.
@@ -113,7 +113,6 @@ class AdminControllerPage extends ControllerPage
   {
     $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
     $this->paramsPage['post'] = $_POST;
-
 
 
     return false;

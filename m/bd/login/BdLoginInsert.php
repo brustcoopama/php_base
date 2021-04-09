@@ -34,7 +34,7 @@ class BdLoginInsert extends Bd
             'obs'        => 'Login criado para teste.',
         ];
         $register2 = [
-            'matricula'  => '2108',
+            'matricula'  => '2109',
             'full_name'  => 'João da silva',
             'first_name' => 'João',
             'last_name'  => 'da Silva',
@@ -49,7 +49,8 @@ class BdLoginInsert extends Bd
             
         ];
         // Execução do insert.
-        return Self::Insert('login', $register1);
-        return Self::Insert('login', $register2);
+        Self::Insert('login', $register1);
+        Self::Insert('login', $register2);
+        return true;
     }
 }

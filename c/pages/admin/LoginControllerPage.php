@@ -238,7 +238,7 @@ class LoginControllerPage extends ControllerPage
         else
           $r['r'] = "Classe não instanciada.";
         break;
-      case 'BdPagesInsert':
+      case 'BdLoginInsert':
         if (class_exists("BdLoginInsert"))
           $r['r'] = BdLoginInsert::start();
         else
