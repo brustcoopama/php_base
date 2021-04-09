@@ -22,7 +22,7 @@ switch ($host) {
         define("DB1_PREFIX_TABLE", "coopama_");
         break;
     case '2':
-        define("URL_RAIZ", "http://sitecoopama.local/");
+        define("URL_RAIZ", "http://sitecoopama-bit.local/");
         // Acesso ao banco de dados PDO 01.
         define("DB1", true);                  // Conexão será usada?
         define("DB1_DBMANAGER", "mysql");
