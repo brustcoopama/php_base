@@ -9,6 +9,7 @@
 $host = 2;
 switch ($host) {
     case '1':
+        // Site produção.
         define("URL_RAIZ", "https://novo-site.coopama.com.br/");
         // Acesso ao banco de dados PDO 01.
         define("DB1", true);                  // Conexão será usada?
@@ -22,7 +23,8 @@ switch ($host) {
         define("DB1_PREFIX_TABLE", "coopama_");
         break;
     case '2':
-        define("URL_RAIZ", "http://sitecoopama.local/");
+        // Site Homologação
+        define("URL_RAIZ", "http://sitecoopama-bit.local/");
         // Acesso ao banco de dados PDO 01.
         define("DB1", true);                  // Conexão será usada?
         define("DB1_DBMANAGER", "mysql");
@@ -35,6 +37,7 @@ switch ($host) {
         define("DB1_PREFIX_TABLE", "coopama_");
         break;
     case '3':
+        // Local BRUST
         define("URL_RAIZ", "http://localhost/base_php/");
         // Acesso ao banco de dados PDO 01.
         define("DB1", true);                  // Conexão será usada?

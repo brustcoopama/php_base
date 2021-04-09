@@ -571,8 +571,13 @@ class Core
       require_once $controller_path;
 
       // Instancia a classe do controllerPage e salva nos parâmetros do Core.
-      $refl = new ReflectionClass(ucfirst($controller_name));
+      try {
+        $refl = new ReflectionClass(ucfirst($controller_name));
       return $refl->newInstanceArgs();
+      } catch (\Throwable $th) {
+        throw new Exception('Verifique se a controller '. $controller_name .' está com nome correto, e se ela existe em ' . $controller_path . '.');
+      }
+      
     }
 
 

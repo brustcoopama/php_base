@@ -428,6 +428,7 @@ class ControllerPage
     // Carregar os outros parâmetros tipo obj (pensar como usar ele).
     // Mandar os parâmetros para dentro do render.
 
+    
     // Carrega as controllers passadas no parâmetro BD. Para poder trabalhar com os dados na página (view).
     foreach ($this->paramsBd as $value) {
       $path_bd = PATH_MODEL_BD . $value . '.php';
@@ -436,6 +437,8 @@ class ControllerPage
         require_once $path_bd;
       }
     }
+
+
   }
 
 
