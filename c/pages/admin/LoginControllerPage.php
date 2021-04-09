@@ -96,7 +96,7 @@ class LoginControllerPage extends ControllerPage
     $this->paramsBd = array(
       'tables/BdTablesCreate',   // Criação de tabelas.
       'tables/BdTablesDelete',   // Criação de tabelas.
-      'pages/BdLoginInsert',   // Criação de tabelas.
+      'login/BdLoginInsert',   // Criação de tabelas.
     );
   } // pre.
 
