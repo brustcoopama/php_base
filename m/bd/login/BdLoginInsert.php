@@ -19,7 +19,7 @@ class BdLoginInsert extends Bd
     public static function insertTest()
     {
         // Campos e valores.
-        $register1 = [
+        $register = [
             'matricula'  => '2108',
             'full_name'  => 'Mateus Rocha Brust',
             'first_name' => 'Mateus',
@@ -33,7 +33,8 @@ class BdLoginInsert extends Bd
             'id_status'  => '1',
             'obs'        => 'Login criado para teste.',
         ];
-        $register2 = [
+        Self::Insert('login', $register);
+        $register = [
             'matricula'  => '2109',
             'full_name'  => 'João da silva',
             'first_name' => 'João',
@@ -48,9 +49,8 @@ class BdLoginInsert extends Bd
             'obs'        => 'Login criado para teste.',
             
         ];
-        // Execução do insert.
-        Self::Insert('login', $register1);
-        Self::Insert('login', $register2);
+        Self::Insert('login', $register);
+        
         return true;
     }
 }

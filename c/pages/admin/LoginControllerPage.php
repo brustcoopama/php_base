@@ -97,6 +97,7 @@ class LoginControllerPage extends ControllerPage
       'tables/BdTablesCreate',   // Criação de tabelas.
       'tables/BdTablesDelete',   // Criação de tabelas.
       'login/BdLoginInsert',   // Criação de tabelas.
+      'login/BdLogin',   // Criação de tabelas.
     );
   } // pre.
 
@@ -113,8 +114,6 @@ class LoginControllerPage extends ControllerPage
   {
     $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
     $this->paramsPage['post'] = $_POST;
-
-
 
     return false;
   }
@@ -161,6 +160,29 @@ class LoginControllerPage extends ControllerPage
   public function get()
   {
     $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+
+    // $this->paramsPage['login_add'] = BdLogin::Adicionar(array(
+    //   'matricula' => '2100',
+    //   'full_name' => 'Rafael',
+    //   'email'     => 'rafael@coopama.com.br',
+    // ));
+    
+    $this->paramsPage['login_atualiza'] = BdLogin::atualiza(6, array(
+      'matricula' => '2100',
+      'full_name' => 'Lucas',
+      'email'     => 'lucas@coopama.com.br',
+      'senha'     => '123456',
+      'cpf'       => '12312312312',
+    ));
+    $this->paramsPage['login_qtd'] = BdLogin::quantidade();
+    $this->paramsPage['login_deleta'] = BdLogin::deleta(5);
+    $this->paramsPage['login_tudo'] = BdLogin::selecionaTudo();
+    $this->paramsPage['login_1'] = BdLogin::selecionaPorId(2);
+    
+
+
+    // print_r($this->paramsPage['login_1']);
+    // exit;
 
     return false;
   }

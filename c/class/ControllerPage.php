@@ -207,7 +207,7 @@ class ControllerPage
       //'pasta' => 'BdArquivo',   // Exemplo
     );
 
-    
+
 
     // Valores que podem ser inseridos em todas página.
     // Exemplo: 'p_nome' => 'Mateus',
@@ -264,20 +264,21 @@ class ControllerPage
           $api = true;
           $this->api();
           break;
+        case 'test':
+          $this->test();
+          break;
         default:
           $this->index();
-        break;
+          break;
       }
     } else {
       $this->index();
     }
 
     // Renderiza o html.
-    if (!$api){
+    if (!$api) {
       ControllerRender::render($this->paramsSecurity, $this->paramsController, $this->paramsTemplate, $this->paramsTemplateObjs, $this->paramsView, array_merge($this->paramsPage, $this->paramsGlobal));
     }
-    
-    
   }
 
 
@@ -377,6 +378,20 @@ class ControllerPage
 
 
   /**
+   * Inicia a página de teste. 
+   * Usada para realizar testes.
+   *
+   * @return bool
+   */
+  public function test()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+
+    return false;
+  }
+
+
+  /**
    * Exibe a página inicial.
    * Usado para criar os parâmetros e dados disponibilizados na view.
    * É executado depois do preprocessamento()
@@ -428,7 +443,7 @@ class ControllerPage
     // Carregar os outros parâmetros tipo obj (pensar como usar ele).
     // Mandar os parâmetros para dentro do render.
 
-    
+
     // Carrega as controllers passadas no parâmetro BD. Para poder trabalhar com os dados na página (view).
     foreach ($this->paramsBd as $value) {
       $path_bd = PATH_MODEL_BD . $value . '.php';
@@ -437,8 +452,6 @@ class ControllerPage
         require_once $path_bd;
       }
     }
-
-
   }
 
 
