@@ -1,11 +1,20 @@
 <?php
 
 /**
- * Controller defaul.
- * Usado para [v]views sem arquivo de controle.
+ * Controller default.
+ * É chamado quando página não é encontrada.
+ * Error 404.
  */
 class DefaultControllerPage extends ControllerPage
 {
+
+
+  /**
+   * Realiza o pré processamento da página inicial.
+   * Usado para definir os parâmetros de personalização da página.
+   *
+   * @return void
+   */
   public function pre()
   {
 
@@ -48,9 +57,9 @@ class DefaultControllerPage extends ControllerPage
     // Valores default de $paramsView. Valores vazios são ignorados.
     //https://www.infowester.com/metatags.php
     $this->paramsView = array(
-      'title'             => 'Página Modelo',                                                         // Título da página exibido na aba/janela navegador.
+      'title'             => 'Erro 404',                                                         // Título da página exibido na aba/janela navegador.
       'author'            => 'Mateus Brust',                                                          // Autor do desenvolvimento da página ou responsável.
-      'description'       => 'Página criada para mostrar como é a criação de controllers e views.',   // Resumo do conteúdo do site apresentado nas prévias das buscas em até 90 carecteres.
+      'description'       => 'Página não encontrada.',   // Resumo do conteúdo do site apresentado nas prévias das buscas em até 90 carecteres.
       'keywords'          => 'modelo, página, controllers, views',                                    // palavras minúsculas separadas por "," referente ao conteúdo da página em até 150 caracteres.
       'content-language'  => 'pt-br',                                                                 // Linguagem primária da página (pt-br).
       'content-type'      => 'utf-8',                                                                 // Tipo de codificação da página.
@@ -89,5 +98,127 @@ class DefaultControllerPage extends ControllerPage
       'pasta/BdArquivo',   // Exemplo
     );
 
+    
+  }
+
+
+
+  /**
+   * Quando é enviado dados via post.
+   * Executa as ações necessárias com os dados repassados via &_POST.
+   * Dados para serem cadastrados, alterados, ou para simplesmente dinâmica da página.
+   *
+   * @return bool
+   */
+  public function _post()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+    $this->paramsPage['post'] = $_POST;
+    return false;
+  }
+
+
+  /**
+   * Cria um registro
+   * Exibe página para criação de registros.
+   * Leve pois não busca dados no banco de dados para preencher o formulário.
+   *
+   * @return bool
+   */
+  public function post()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+    return false;
+  }
+
+
+  /**
+   * Atualiza registros.
+   * Exibe uma página com formulário para atualização de registros.
+   * Caso passe parâmetros na url, já realiza essas alterações.
+   * Caso chame a página sem parâmetros é exibido formulário com os dados de referência para atualização.
+   *
+   * @return bool
+   */
+  public function put()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+    return false;
+  }
+
+
+  /**
+   * Exibe registros.
+   * Usado para retornar muitos registros em uma página separada.
+   * Pode ser escolhido algum template (objs) para exibir os dados.
+   *
+   * @return void
+   */
+  public function get()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+    return false;
+  }
+
+
+  /**
+   * Deleta um registro.
+   * Usado para deletar um usuário ou classificá-lo como excluido.
+   *
+   * @return bool
+   */
+  public function delete()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+    return false;
+  }
+
+
+  /**
+   * Exibe a página inicial.
+   * Usado para criar os parâmetros e dados disponibilizados na view.
+   * É executado depois do preprocessamento()
+   *
+   * @return bool
+   */
+  public function index()
+  {
+    // $this->paramsPage['nome'] = 'Mateus';
+    // $this->paramsPage['usuarios'] = BdUsuarios::getAll();
+    
+    return true;
+  }
+
+
+  /**
+   * Inicia a api da página. 
+   * Usada para carregar especificidades da página.
+   * Alivia o carregamento da página e ajuda no dinamismo.
+   *
+   * @return bool
+   */
+  public function api()
+  {
+    header('Content-Type: application/json');
+    echo json_encode(array(
+      'status' => 'OK',
+      'msg' => 'Implementar a api da ' . $this->controllerName . __CLASS__ . '.'
+    ));
+
+    return false;
+  }
+
+
+  /**
+   * Inicia a página de teste. 
+   * Usada para realizar testes sem afetar a produção.
+   *
+   * @return bool
+   */
+  public function test()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+
+    return false;
   }
 }

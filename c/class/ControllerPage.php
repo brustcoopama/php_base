@@ -215,6 +215,16 @@ class ControllerPage
     $this->paramsGlobal = array(
       'empresa'              => 'COOPAMA',      // Nome da empresa.
       'attr'              => $this->attr,      // Parâmetros passados por url.
+      'URL_RAIZ'          => URL_RAIZ,                                            // Path.
+      'PATH_MODEL_ASSETS' => URL_RAIZ . PATH_MODEL_ASSETS,                        // Path.
+      'PATH_MODEL_CSS'    => URL_RAIZ . PATH_MODEL_CSS,                           // Path.
+      'PATH_MODEL_IMG'    => URL_RAIZ . PATH_MODEL_IMG,                           // Path.
+      'PATH_MODEL_JS'     => URL_RAIZ . PATH_MODEL_JS,                            // Path.
+      'PATH_MODEL_UPLOAD' => URL_RAIZ . PATH_MODEL_UPLOAD,                        // Path.
+      'PATH_MODEL_ADMIN'  => URL_RAIZ . PATH_MODEL_ADMIN,                         // Path.
+      'favicon'           => URL_RAIZ . PATH_MODEL_IMG . 'favicon_coopama.png',   // Imagem favicon.
+      'apple-touch-icon'  => URL_RAIZ . PATH_MODEL_IMG . 'favicon_coopama.png',   // Imagem aple.
+      'logo'              => URL_RAIZ . PATH_MODEL_IMG . 'logo_coopama.png',      // Imagem Logo.
       // Puxar informações user.
     );
   }
@@ -379,7 +389,7 @@ class ControllerPage
 
   /**
    * Inicia a página de teste. 
-   * Usada para realizar testes.
+   * Usada para realizar testes sem afetar a produção.
    *
    * @return bool
    */

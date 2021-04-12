@@ -85,6 +85,14 @@
     <div class="col-xs-12">
       <p class="m-0">Get</p>
       <p>
+        Atributos [attr]: 
+        <ul>
+          {% for at in attr %}
+          <li>[{{ at }}]</li>
+          {% endfor %}
+        </ul>
+      </p>
+      <p>
         Cadastrou: {{login_add}}.
         <br>
         Quantidade: {{login_qtd}}.
