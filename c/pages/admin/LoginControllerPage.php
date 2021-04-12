@@ -65,16 +65,6 @@ class LoginControllerPage extends ControllerPage
       'refresh'           => '',                                                  // Tempo para recarregar a página.
       'redirect'          => '',                                                  // URL para redirecionar usuário após refresh.
       'obs'               => 'Cria um meta obs.',                                 // Outra qualquer observação sobre a página.
-      'URL_RAIZ'          => URL_RAIZ,                                            // Path.
-      'PATH_MODEL_ASSETS' => URL_RAIZ . PATH_MODEL_ASSETS,                        // Path.
-      'PATH_MODEL_CSS'    => URL_RAIZ . PATH_MODEL_CSS,                           // Path.
-      'PATH_MODEL_IMG'    => URL_RAIZ . PATH_MODEL_IMG,                           // Path.
-      'PATH_MODEL_JS'     => URL_RAIZ . PATH_MODEL_JS,                            // Path.
-      'PATH_MODEL_UPLOAD' => URL_RAIZ . PATH_MODEL_UPLOAD,                        // Path.
-      'PATH_MODEL_ADMIN'  => URL_RAIZ . PATH_MODEL_ADMIN,                         // Path.
-      'favicon'           => URL_RAIZ . PATH_MODEL_IMG . 'favicon_coopama.png',   // Imagem favicon.
-      'apple-touch-icon'  => URL_RAIZ . PATH_MODEL_IMG . 'favicon_coopama.png',   // Imagem aple.
-      'logo'              => URL_RAIZ . PATH_MODEL_IMG . 'logo_coopama.png',      // Imagem Logo.
       'anoAtual'          => date('Y'),                                           // Imagem Logo.
     );
 
@@ -159,7 +149,6 @@ class LoginControllerPage extends ControllerPage
    */
   public function get()
   {
-    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
 
     // $this->paramsPage['login_add'] = BdLogin::Adicionar(array(
     //   'matricula' => '2100',
@@ -179,10 +168,6 @@ class LoginControllerPage extends ControllerPage
     $this->paramsPage['login_tudo'] = BdLogin::selecionaTudo();
     $this->paramsPage['login_1'] = BdLogin::selecionaPorId(2);
     
-
-
-    // print_r($this->paramsPage['login_1']);
-    // exit;
 
     return false;
   }
@@ -275,9 +260,25 @@ class LoginControllerPage extends ControllerPage
 
 
 
-
-
     // Retorna json.
     echo json_encode($r);
   }
+
+
+
+
+  /**
+   * Inicia a página de teste. 
+   * Usada para realizar testes sem afetar a produção.
+   *
+   * @return bool
+   */
+  public function test()
+  {
+    $this->paramsPage['rest'] = 'Implementar função <b>' . __FUNCTION__ . '</b> da classe <b>' . $this->controllerName . __CLASS__ . '</b>.<br>';
+
+    return false;
+  }
+
+
 }
