@@ -50,6 +50,20 @@ switch ($host) {
         define("DB1_CHARSET", "utf8");
         define("DB1_PREFIX_TABLE", "db1_");
         break;
+    case '4':
+        // Local Rafael (casa)
+        define("URL_RAIZ", "http://localhost/base_php/");
+        // Acesso ao banco de dados PDO 01.
+        define("DB1", true);                  // Conexão será usada?
+        define("DB1_DBMANAGER", "mysql");
+        define("DB1_HOST", "localhost");
+        define("DB1_PORT", "3306");
+        define("DB1_USER", "root");
+        define("DB1_PASSWORD", "");
+        define("DB1_DBNAME", "coopama");
+        define("DB1_CHARSET", "utf8");
+        define("DB1_PREFIX_TABLE", "coopama_");
+        break;
 }
 
 
